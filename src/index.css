@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #10B981;
+  --color-primary-dark: #059669;
+  --color-bg: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-text-main: var(--text-color);
+  --color-border-main: var(--border-color);
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+:root {
+  --bg-color: #07080a;
+  --surface-color: #121418;
+  --text-color: #F8FAFC;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glow-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --bg-color: #F8FAFC;
+  --surface-color: #FFFFFF;
+  --text-color: #0F172A;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --glow-color: rgba(16, 185, 129, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.glass-panel {
+  background: var(--surface-color);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-color);
+  transition: all 0.5s ease;
+}
+
+.glass-glow {
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.05);
+}
+
+.bento-card {
+  background: var(--surface-color);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bento-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1), 0 0 30px rgba(16, 185, 129, 0.05);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px var(--glow-color);
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.animate-blur-in {
+  animation: blurIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.font-blur-hover:hover {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+.font-blur-hover {
+  transition: filter 0.3s ease;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mask-linear-fade {
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+

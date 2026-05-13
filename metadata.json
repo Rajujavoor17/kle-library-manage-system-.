@@ -1,0 +1,5 @@
+{
+  "name": "BCA DIGITAL ARCHIVE",
+  "description": "A high-fidelity technical library and syllabus vault for BCA students, featuring immersive glassmorphism, real-time node indexing, and resource allocation.",
+  "requestFramePermissions": ["microphone"]
+}
